@@ -1,0 +1,15 @@
+[Unit]
+Description=Alert Bot Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=~/bot/
+ExecStart=/usr/bin/python ~/bot/bot.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
